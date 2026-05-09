@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Hajj Companion</title>
+  <meta name="description"
+    content="A personal checklist and guide for the complete Hajj journey — from Nusuk registration through each day of rites. Works offline. No tracking." />
+
+  <!-- Theme colour for browser chrome -->
+  <meta name="theme-color" content="#0F5132" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0E0F11" />
+
+  <!-- PWA / iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Hajj Companion" />
+  <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hajj Companion" />
+  <meta property="og:description"
+    content="A personal checklist and guide for the complete Hajj journey. Works offline. No tracking." />
+  <meta property="og:type" content="website" />
+
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="./icons/icon.svg" />
+  <link rel="stylesheet" href="./styles.css" />
+
+  <style>
+    /* Prevent flash of white on dark mode before JS loads */
+    @media (prefers-color-scheme: dark) {
+      html {
+        background: #0E0F11;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <noscript>
+    <div style="padding:2rem;font-family:system-ui,sans-serif;max-width:600px;margin:3rem auto;line-height:1.6;">
+      <h1 style="margin-bottom:1rem;">Hajj Companion</h1>
+      <p>This app requires JavaScript to run. Please enable JavaScript in your browser settings.</p>
+      <p style="margin-top:1rem;color:#666;">For a plain-text version of the Hajj guide, see the project's README on
+        GitHub.</p>
+    </div>
+  </noscript>
+
+  <div id="app">
+    <!-- Top bar -->
+    <header id="topbar" role="banner">
+      <div class="topbar-left">
+        <button id="menu-toggle" class="icon-btn" aria-label="Open navigation menu" aria-expanded="false"
+          aria-controls="sidebar">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+            <rect y="3" width="20" height="2" rx="1" fill="currentColor" />
+            <rect y="9" width="20" height="2" rx="1" fill="currentColor" />
+            <rect y="15" width="20" height="2" rx="1" fill="currentColor" />
+          </svg>
+        </button>
+        <span class="app-title">Hajj Companion</span>
+      </div>
+      <div class="topbar-right">
+        <div class="global-progress" aria-label="Overall preparation progress">
+          <div class="global-progress-bar" role="none">
+            <div id="global-progress-bar" style="width:0%"></div>
+          </div>
+          <span class="global-progress-label" id="global-progress-label" aria-live="polite">0%</span>
+        </div>
+        <button id="settings-toggle" class="icon-btn" aria-label="Settings" aria-expanded="false"
+          aria-controls="settings-panel">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+            <circle cx="10" cy="10" r="2.8" stroke="currentColor" stroke-width="1.5" />
+            <path
+              d="M10 1.5v2M10 16.5v2M1.5 10h2M16.5 10h2M3.64 3.64l1.41 1.41M14.95 14.95l1.41 1.41M3.64 16.36l1.41-1.41M14.95 5.05l1.41-1.41"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Sidebar overlay for mobile -->
+    <div id="sidebar-overlay" class="sidebar-overlay" aria-hidden="true"></div>
+
+    <!-- Sidebar navigation -->
+    <aside id="sidebar" role="complementary" aria-label="Main navigation">
+      <nav id="sidebar-nav" aria-label="Sections">
+        <!-- Rendered by render.js -->
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main id="content" role="main" tabindex="-1" aria-label="Main content">
+      <!-- Rendered by render.js -->
+    </main>
+
+    <!-- Settings panel -->
+    <aside id="settings-panel" class="settings-panel" role="complementary" aria-label="Settings" hidden>
+      <!-- Rendered by render.js when opened -->
+    </aside>
+  </div>
+
+  <!-- Toast notification -->
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+
+</html>

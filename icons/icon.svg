@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <rect width="192" height="192" rx="36" fill="#0F5132"/>
+  <!-- Ka'bah silhouette -->
+  <rect x="62" y="72" width="68" height="74" rx="4" fill="#ffffff" opacity="0.95"/>
+  <rect x="80" y="104" width="32" height="42" rx="3" fill="#0F5132"/>
+  <!-- Door arch -->
+  <rect x="80" y="104" width="32" height="20" rx="10" fill="#0F5132" opacity="0"/>
+  <!-- Roof detail -->
+  <rect x="54" y="64" width="84" height="12" rx="3" fill="#ffffff" opacity="0.7"/>
+  <!-- Crescent moon -->
+  <circle cx="133" cy="44" r="12" fill="#D4A552"/>
+  <circle cx="138" cy="40" r="9" fill="#0F5132"/>
+  <!-- Star -->
+  <polygon points="148,38 149.5,35 151,38 154,38 151.8,40 152.7,43 149.5,41.2 146.3,43 147.2,40 145,38" fill="#D4A552"/>
+</svg>
