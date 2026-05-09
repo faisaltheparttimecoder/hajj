@@ -33,6 +33,10 @@ function matchRoute(parts) {
 
     if (parts[0] === 'settings') return { route: '/settings', params: {} };
 
+    if (parts[0] === 'umrah') return { route: '/umrah', params: {} };
+
+    if (parts[0] === 'madinah') return { route: '/madinah', params: {} };
+
     return { route: null, params: {} };
 }
 

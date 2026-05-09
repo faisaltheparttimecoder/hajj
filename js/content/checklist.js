@@ -616,5 +616,66 @@ export const checklistSection = {
                 },
             ],
         },
+        {
+            id: 'checklist.lastminute',
+            title: 'Day of Departure — Last Minute Checks',
+            icon: 'logistics',
+            items: [
+                {
+                    id: 'checklist.lastminute.ghusl-home',
+                    label: 'Ghusl, clip nails, trim moustache, remove pubic/underarm hair at home',
+                    note: 'All of these are prohibited in Ihrām. Do them before leaving the house. For men: apply Itar to the body — not to the Ihram sheets.',
+                },
+                {
+                    id: 'checklist.lastminute.nafl-home',
+                    label: 'Read 2 rakaat nafl at home before leaving (if not a Makruh time)',
+                    note: 'Recite Surah Kafirun in the 1st rakaat and Surah Ikhlas in the 2nd. Make dua for ease of journey, acceptance, and safety.',
+                },
+                {
+                    id: 'checklist.lastminute.docs-check',
+                    label: 'Check all documents are in the travel wallet: passport, e-visa, vaccination certificate, operator ticket',
+                    note: 'Do a final check — nothing should be left behind. Take a photo of each document on your phone as a backup.',
+                },
+                {
+                    id: 'checklist.lastminute.suitcase-weight',
+                    label: 'Weigh suitcase — must not exceed airline weight allowance',
+                    note: 'Most Saudi airlines allow 23kg for economy. Overweight fees are steep. Confirm with your carrier.',
+                },
+                {
+                    id: 'checklist.lastminute.wristband',
+                    label: 'Operator ID wristband and group identification sticker received and on person',
+                    note: 'Many Hajj operators provide wristbands and identification stickers. These are vital for group identification in crowded places.',
+                },
+                {
+                    id: 'checklist.lastminute.phone-charged',
+                    label: 'Phone and power bank fully charged',
+                },
+                {
+                    id: 'checklist.lastminute.airport-arrive-early',
+                    label: 'Arrive at the airport early — at least 3–4 hours before departure for Hajj groups',
+                    note: 'Hajj flights involve additional check-in procedures. Do not arrive at the standard 2-hour window — allow at least 3–4 hours.',
+                },
+                {
+                    id: 'checklist.lastminute.social-media',
+                    label: 'Decision made about social media: consider a digital detox for the journey',
+                    note: 'You are a guest of Allah. These are precious minutes. Consider disabling social media, suspending accounts, or removing apps for the duration of the trip. Do not take photographs at the Holy Sites — focus your heart on worship.',
+                },
+                {
+                    id: 'checklist.lastminute.halal-food',
+                    label: 'Halal food at the airport and on the plane confirmed',
+                    note: 'If flying with a non-Muslim carrier, pre-order a halal meal when booking. At the airport, check all food is halal before buying. Pack dates, nuts, and cereal bars as backup.',
+                },
+                {
+                    id: 'checklist.lastminute.group-leader',
+                    label: "Group leader's phone number and WhatsApp saved on phone and written on paper",
+                    note: 'Write it on paper — in Mina, phone battery may die. Also save the hotel name and address.',
+                },
+                {
+                    id: 'checklist.lastminute.ihram-handluggage',
+                    label: 'Ihram garments in hand luggage — accessible before the flight reaches the Miqat',
+                    note: 'If entering Ihram on the plane or at the airport, have the Ihram easily accessible. Keep Itar in hand luggage too (travel size, within liquid rules).',
+                },
+            ],
+        },
     ],
 };

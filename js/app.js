@@ -16,6 +16,8 @@ import {
     renderChecklist,
     renderHajjDay,
     renderHajjOverview,
+    renderUmrah,
+    renderMadinah,
     renderReference,
     renderSettings,
     updateGlobalProgress,
@@ -140,6 +142,10 @@ function setupRoutes() {
     router.on('/hajj', () => renderHajjOverview());
 
     router.on('/hajj/:day', ({ day }) => renderHajjDay(day));
+
+    router.on('/umrah', () => renderUmrah());
+
+    router.on('/madinah', () => renderMadinah());
 
     router.on('/reference', () => renderReference('duas'));
 

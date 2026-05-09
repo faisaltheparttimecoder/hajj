@@ -1,5 +1,89 @@
 export const hajjDays = [
     {
+        id: 'day-0',
+        slug: 'day-0',
+        date: '7th Dhul Hijjah',
+        arabicDate: '٧ ذو الحجة',
+        arabicName: 'يَوْم اسْتِعْدَاد الحَج',
+        name: 'Preparation Day',
+        title: 'Day 0 — Preparation Day',
+        subtitle: 'Ihrām for Hajj & Final Preparations',
+        location: 'Your accommodation in Makkah',
+        overview: `The 7th of Dhul Hijjah is the final day before the Hajj rites begin. Tomorrow you travel to Mina. Today, you prepare physically and spiritually — clipping nails, making ghusl, putting on Ihrām for Hajj, and renewing your intention.
+
+This is a day of quiet preparation. Rest well. Avoid over-exerting yourself. Make sure your Mina bag is packed lightly — you will carry it on foot through some of the most crowded places on earth.`,
+        steps: [
+            {
+                id: 'day-0.clip-nails',
+                label: 'Clip nails, trim moustache, remove pubic and underarm hair',
+                note: 'These are all forbidden while in Ihrām. Do them now before entering the sacred state.',
+            },
+            {
+                id: 'day-0.pack-mina-bag',
+                label: 'Pack your Mina bag — keep it as light as possible',
+                note: 'Pack: unscented soap, Quran, tissues, tasbeeh, medication, water bottle, snacks (dates/nuts), phone + charger + power bank, Ihram spare set, prayer mat. You will carry this for many hours.',
+            },
+            {
+                id: 'day-0.confirm-qurbani',
+                label: 'Obtain the name and contact of the person doing your Udhiyah (Qurbani)',
+                note: 'If your group organises Qurbani, get the contact details now and note them. On Day 3, you must confirm 100% that it has been done before shaving your head.',
+            },
+            {
+                id: 'day-0.note-salat-times',
+                label: 'Note the Makkah Salat times for Dhuhr, Asr, Maghrib, Isha, and Fajr',
+                note: 'You will need these in Mina, Arafah, and Muzdalifah. Save them to your phone or write them on paper.',
+            },
+            {
+                id: 'day-0.ghusl',
+                label: 'After Isha, perform ghusl (full ritual bath) for Ihram',
+                note: 'Use unscented soap. For men: perfume may be applied to the body at this point (not to the Ihram garments themselves). Women should be fully changed into their Ihram clothing.',
+            },
+            {
+                id: 'day-0.put-on-ihram',
+                label: 'Put on Ihram garments for Hajj',
+                note: 'Men: remove all stitched clothing and underwear, drape the rida (upper sheet) and izar (lower sheet). Women: any modest clothing — no white Ihram required, face and hands uncovered.',
+            },
+            {
+                id: 'day-0.go-to-haram',
+                label: 'Go to the Haram Sharif if possible (recommended, not obligatory)',
+                note: 'It is recommended to make the intention for Hajj inside the Haram. If your accommodation is far, you may make the intention from there.',
+            },
+            {
+                id: 'day-0.nafl-tawaf',
+                label: 'Perform one nafl Tawaf if possible (for Tahiyatul Masjid)',
+                note: 'If too busy to perform Tawaf, read 2 rakaat Tahiyatul Masjid instead.',
+            },
+            {
+                id: 'day-0.salat-ihram',
+                label: 'Read 2 rakaat Salat with the intention of Ihram (head covered, then uncover)',
+                note: 'In the 1st rakaat recite Surah Kafirun; in the 2nd recite Surah Ikhlas. After Salah, uncover your head and make dua.',
+            },
+            {
+                id: 'day-0.niyyah-hajj',
+                label: 'Make the intention (Niyyah) for Hajj — aloud',
+                note: '"Allahumma inni uridul Hajja, fayassirhu li wa taqabbalhu minni." (O Allah, I intend to perform Hajj — make it easy for me and accept it from me.)',
+            },
+            {
+                id: 'day-0.talbiyah',
+                label: 'Recite the Talbiyah 3 times — you are now in the state of Ihram',
+                note: 'From this moment, all Ihram prohibitions apply. Recite the Talbiyah frequently until you cast the first stone at Jamarat al-Aqabah on Day 3.',
+            },
+            {
+                id: 'day-0.rest',
+                label: 'Return to hotel and sleep — rest well before the days ahead',
+                note: 'Tomorrow begins the most physically demanding sequence of your life. Sleep early if you can.',
+            },
+        ],
+        duas: ['entering_ihram', 'talbiyah'],
+        edgeCases: [
+            'The intention for Hajj must be made before passing or leaving the Miqat boundary. If already in Makkah, make the intention before departing for Mina.',
+            "Optional: some pilgrims perform the Sa'i for Hajj on this day after a nafl Tawaf (especially Tamattu' pilgrims who wish to complete it early). Consult your scholar.",
+            'If your group travels to Mina before Fajr of the 8th, ensure you have entered Ihram before departing.',
+            'Do not miss any Salat on the way to or in Mina. Plan travel time to account for prayer times.',
+        ],
+    },
+
+    {
         id: 'day-1',
         slug: 'day-1',
         date: '8th Dhul Hijjah',

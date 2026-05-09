@@ -3,6 +3,8 @@ import { checklistSection } from './content/checklist.js';
 import { hajjDays } from './content/hajj-days.js';
 import { duas, duasList } from './content/duas.js';
 import { glossaryTerms } from './content/glossary.js';
+import { umrahSection } from './content/umrah.js';
+import { madinahSection } from './content/madinah.js';
 import { isCompleted, toggleCompleted, countCompleted, getNote, setNote } from './state.js';
 
 const content = document.getElementById('content');
@@ -30,8 +32,22 @@ function allHajjIds() {
     return hajjDays.flatMap((d) => d.steps.map((s) => s.id));
 }
 
+function allUmrahIds() {
+    return umrahSection.steps.map((s) => s.id);
+}
+
+function allMadinahIds() {
+    return madinahSection.steps.map((s) => s.id);
+}
+
 function allItemIds() {
-    return [...allNusukIds(), ...allChecklistIds(), ...allHajjIds()];
+    return [
+        ...allNusukIds(),
+        ...allChecklistIds(),
+        ...allHajjIds(),
+        ...allUmrahIds(),
+        ...allMadinahIds(),
+    ];
 }
 
 function pct(done, total) {
@@ -176,6 +192,14 @@ export function renderSidebar(currentHash) {
     const hajjDone = countCompleted(hajjIds);
     const hajjTotal = hajjIds.length;
 
+    const umrahIds = allUmrahIds();
+    const umrahDone = countCompleted(umrahIds);
+    const umrahTotal = umrahIds.length;
+
+    const madinahIds = allMadinahIds();
+    const madinahDone = countCompleted(madinahIds);
+    const madinahTotal = madinahIds.length;
+
     const isActive = (hash) =>
         currentHash === hash || currentHash.startsWith(hash + '/') ? 'is-active' : '';
 
@@ -183,6 +207,8 @@ export function renderSidebar(currentHash) {
     const clActive = currentHash.startsWith('#/checklist') ? 'is-active' : '';
     const hajjActive = currentHash.startsWith('#/hajj') ? 'is-active' : '';
     const refActive = currentHash.startsWith('#/reference') ? 'is-active' : '';
+    const umrahActive = currentHash === '#/umrah' ? 'is-active' : '';
+    const madinahActive = currentHash === '#/madinah' ? 'is-active' : '';
 
     const clGroupLinks = checklistSection.groups
         .map((g) => {
@@ -251,6 +277,22 @@ export function renderSidebar(currentHash) {
         <ul class="sidebar-sub-list">
           ${hajjDayLinks}
         </ul>
+      </li>
+
+      <li class="sidebar-nav-item">
+        <a href="#/umrah" class="sidebar-top-link ${umrahActive}" aria-label="Umrah Guide">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="5" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="8" r="2" stroke="currentColor" stroke-width="1.4"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          Umrah Guide
+          <span class="sidebar-count">${umrahDone}/${umrahTotal}</span>
+        </a>
+      </li>
+
+      <li class="sidebar-nav-item">
+        <a href="#/madinah" class="sidebar-top-link ${madinahActive}" aria-label="Madinah Guide">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1v3M5 2.5L8 4l3-1.5M3 7h10M3 7l1-3h8l1 3M3 7v7h10V7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Madinah Guide
+          <span class="sidebar-count">${madinahDone}/${madinahTotal}</span>
+        </a>
       </li>
 
       <li class="sidebar-nav-item sidebar-section ${refActive ? 'is-open' : ''}">
@@ -326,13 +368,35 @@ export function renderHome() {
           <svg class="section-card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </a>
 
-        <a href="#/hajj/day-1" class="section-card">
+        <a href="#/umrah" class="section-card">
+          <div class="section-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="section-card-body">
+            <h3>Umrah Guide</h3>
+            <p>Step-by-step from home to Makkah — Ihrām, Tawaf, Sa'i, and completing Umrah.</p>
+          </div>
+          <svg class="section-card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+
+        <a href="#/hajj" class="section-card">
           <div class="section-card-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M4 20c0-4.418 3.582-7 8-7s8 2.582 8 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
           <div class="section-card-body">
             <h3>Hajj Day-by-Day</h3>
             <p>A complete guide to each day of Hajj — rites, duas, locations, and common mistakes.</p>
+          </div>
+          <svg class="section-card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+
+        <a href="#/madinah" class="section-card">
+          <div class="section-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2v4M9 3.5L12 6l3-2.5M5 10h14M5 10l1.5-4h11L19 10M5 10v12h14V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="section-card-body">
+            <h3>Madinah Guide</h3>
+            <p>Presenting Salam, visiting the Rawdah, Jannat al-Baqi', and making the most of Madinah.</p>
           </div>
           <svg class="section-card-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </a>
@@ -655,6 +719,102 @@ export function renderHajjDay(daySlug) {
       <div class="view-nav">
         ${prevDay ? `<a href="#/hajj/${prevDay.slug}" class="btn btn--ghost">← ${escHtml(prevDay.title)}</a>` : '<a href="#/checklist" class="btn btn--ghost">← Checklist</a>'}
         ${nextDay ? `<a href="#/hajj/${nextDay.slug}" class="btn btn--primary">${escHtml(nextDay.title)} →</a>` : '<a href="#/reference/duas" class="btn btn--primary">Reference →</a>'}
+      </div>
+    </article>
+  `;
+    attachCheckboxListeners();
+}
+
+export function renderUmrah() {
+    const ids = allUmrahIds();
+    const done = countCompleted(ids);
+    const total = ids.length;
+
+    const phasesHtml = umrahSection.phases
+        .map((phase) => {
+            const phaseIds = phase.steps.map((s) => s.id);
+            const phaseDone = countCompleted(phaseIds);
+            const phaseTotal = phaseIds.length;
+            const stepsHtml = phase.steps.map(renderNusukStep).join('');
+            return `<section class="nusuk-phase" aria-labelledby="${escHtml(phase.id)}">
+        <div class="nusuk-phase-header">
+          <h2 class="nusuk-phase-title" id="${escHtml(phase.id)}">${escHtml(phase.title)}</h2>
+          <span class="nusuk-phase-count">${phaseDone}/${phaseTotal}</span>
+        </div>
+        ${phase.intro ? `<p class="nusuk-phase-intro">${escHtml(phase.intro)}</p>` : ''}
+        <div class="nusuk-steps">${stepsHtml}</div>
+      </section>`;
+        })
+        .join('');
+
+    content.innerHTML = `
+    <article class="view view--nusuk">
+      <header class="view-header">
+        <h1 class="view-title">${escHtml(umrahSection.title)}</h1>
+        <p class="view-intro">${escHtml(umrahSection.intro)}</p>
+        ${renderProgressBar(done, total, 'Umrah guide progress')}
+      </header>
+
+      <div class="info-banner">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.4"/><path d="M8 7v5M8 4.5v.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <div>
+          <strong>Hajj Tamattu':</strong> This guide is written for Tamattu' pilgrims (the most common type) who perform Umrah first, exit Ihrām, then re-enter Ihrām for Hajj on the 7th Dhul Hijjah. For Qiran or Ifrad, consult your scholar.
+        </div>
+      </div>
+
+      ${phasesHtml}
+
+      <div class="view-nav">
+        <a href="#/checklist" class="btn btn--ghost">← Checklist</a>
+        <a href="#/hajj" class="btn btn--primary">Next: Hajj Guide →</a>
+      </div>
+    </article>
+  `;
+    attachCheckboxListeners();
+}
+
+export function renderMadinah() {
+    const ids = allMadinahIds();
+    const done = countCompleted(ids);
+    const total = ids.length;
+
+    const phasesHtml = madinahSection.phases
+        .map((phase) => {
+            const phaseIds = phase.steps.map((s) => s.id);
+            const phaseDone = countCompleted(phaseIds);
+            const phaseTotal = phaseIds.length;
+            const stepsHtml = phase.steps.map(renderNusukStep).join('');
+            return `<section class="nusuk-phase" aria-labelledby="${escHtml(phase.id)}">
+        <div class="nusuk-phase-header">
+          <h2 class="nusuk-phase-title" id="${escHtml(phase.id)}">${escHtml(phase.title)}</h2>
+          <span class="nusuk-phase-count">${phaseDone}/${phaseTotal}</span>
+        </div>
+        ${phase.intro ? `<p class="nusuk-phase-intro">${escHtml(phase.intro)}</p>` : ''}
+        <div class="nusuk-steps">${stepsHtml}</div>
+      </section>`;
+        })
+        .join('');
+
+    content.innerHTML = `
+    <article class="view view--nusuk">
+      <header class="view-header">
+        <h1 class="view-title">${escHtml(madinahSection.title)}</h1>
+        <p class="view-intro">${escHtml(madinahSection.intro)}</p>
+        ${renderProgressBar(done, total, 'Madinah guide progress')}
+      </header>
+
+      <div class="info-banner">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.4"/><path d="M8 7v5M8 4.5v.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <div>
+          <strong>No Ihrām in Madinah:</strong> Visiting Madinah is not part of Hajj itself — it is a separate, deeply blessed visit. There is no Ihrām required for Madinah. The Prophet ﷺ said: "Whoever visits me after my death, it is as if he has visited me during my lifetime." (Al-Bayhaqi)
+        </div>
+      </div>
+
+      ${phasesHtml}
+
+      <div class="view-nav">
+        <a href="#/hajj" class="btn btn--ghost">← Hajj Guide</a>
+        <a href="#/reference/duas" class="btn btn--primary">Next: Duas →</a>
       </div>
     </article>
   `;

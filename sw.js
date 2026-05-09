@@ -17,6 +17,8 @@ const ASSETS_TO_CACHE = [
     './js/content/hajj-days.js',
     './js/content/duas.js',
     './js/content/glossary.js',
+    './js/content/umrah.js',
+    './js/content/madinah.js',
 ];
 
 self.addEventListener('install', (event) => {
