@@ -130,7 +130,7 @@ function renderChecklistItem(item, showNoteField) {
     <div class="checklist-row">
       <label class="checklist-label">
         <input type="checkbox" class="checklist-cb" data-id="${escHtml(item.id)}" ${checked ? 'checked' : ''} />
-        <span class="checklist-text">${escHtml(item.label)}</span>
+        <span class="checklist-text">${escHtml(item.label)}${item.optional ? ' <span class="optional-badge">Optional</span>' : ''}</span>
       </label>
       ${noteBtnHtml}
     </div>
