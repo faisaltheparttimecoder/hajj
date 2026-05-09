@@ -83,11 +83,11 @@ export const umrahPhases = [
             {
                 id: 'umrah.jeddah.immigration',
                 title: 'Pass through immigration — have all documents ready',
-                note: 'Immigration officers will check your visa, immunisation certificate, and passport. They will take your photograph and fingerprints (both men and women). You will receive a transport ticket and a sticker on your passport for your Mu\'allim. Men and women may be separated at immigration — arrange to meet at the baggage claim area.',
+                note: "Immigration officers will check your visa, immunisation certificate, and passport. They will take your photograph and fingerprints (both men and women). You will receive a transport ticket and a sticker on your passport for your Mu'allim. Men and women may be separated at immigration — arrange to meet at the baggage claim area.",
             },
             {
                 id: 'umrah.jeddah.passport',
-                title: 'Be aware: your passport will be held by your Hajj operator/Mu\'allim',
+                title: "Be aware: your passport will be held by your Hajj operator/Mu'allim",
                 note: 'Your passport will be collected at a checkpoint and submitted at the relevant point. If travelling independently for the return journey, ensure you collect your passport from the group operator before departing for the airport home.',
             },
             {
@@ -105,7 +105,7 @@ export const umrahPhases = [
     {
         id: 'umrah.makkah',
         title: 'Arriving at Makkah — Entering the Haram',
-        intro: 'After arriving at the hotel, perform wudu (or ghusl if needed) then make your way to Masjid al-Haram. Try to enter through Bab al-Umrah if possible. Keep your eyes lowered with humility until you reach the Mataf and see the Ka\'bah.',
+        intro: "After arriving at the hotel, perform wudu (or ghusl if needed) then make your way to Masjid al-Haram. Try to enter through Bab al-Umrah if possible. Keep your eyes lowered with humility until you reach the Mataf and see the Ka'bah.",
         steps: [
             {
                 id: 'umrah.makkah.wudu',
@@ -119,15 +119,15 @@ export const umrahPhases = [
             },
             {
                 id: 'umrah.makkah.see-kabah',
-                title: 'When you see the Ka\'bah for the first time, raise your gaze and recite three times',
+                title: "When you see the Ka'bah for the first time, raise your gaze and recite three times",
                 note: '"Allahu Akbar, La ilaha illallah" — three times. Then read Durood Sharif and make as much dua as possible. This is one of the moments where dua is accepted. Ask for everything and remember the whole Ummah.',
             },
         ],
     },
     {
         id: 'umrah.tawaf',
-        title: 'Tawaf — Circling the Ka\'bah',
-        intro: 'Tawaf is the circumambulation of the Ka\'bah 7 times in an anti-clockwise direction, beginning and ending at the Black Stone. You must have wudu. Men perform Idtiba\' (draping the rida\' under the right armpit to expose the right shoulder) for every Tawaf followed by Sa\'i. If you have a tasbeeh with 7 beads, use it to count the circuits.',
+        title: "Tawaf — Circling the Ka'bah",
+        intro: "Tawaf is the circumambulation of the Ka'bah 7 times in an anti-clockwise direction, beginning and ending at the Black Stone. You must have wudu. Men perform Idtiba' (draping the rida' under the right armpit to expose the right shoulder) for every Tawaf followed by Sa'i. If you have a tasbeeh with 7 beads, use it to count the circuits.",
         steps: [
             {
                 id: 'umrah.tawaf.stop-talbiyah',
@@ -136,8 +136,8 @@ export const umrahPhases = [
             },
             {
                 id: 'umrah.tawaf.idtiba',
-                title: 'Men: perform Idtiba\' — drape the rida\' under the right armpit, exposing the right shoulder',
-                note: 'This is done for every Tawaf that is followed by Sa\'i. Do Idtiba\' for all 7 rounds. After the 2 rakaat Salat at Maqam Ibrahim, cover both shoulders again.',
+                title: "Men: perform Idtiba' — drape the rida' under the right armpit, exposing the right shoulder",
+                note: "This is done for every Tawaf that is followed by Sa'i. Do Idtiba' for all 7 rounds. After the 2 rakaat Salat at Maqam Ibrahim, cover both shoulders again.",
             },
             {
                 id: 'umrah.tawaf.black-stone',
@@ -152,7 +152,7 @@ export const umrahPhases = [
             {
                 id: 'umrah.tawaf.circuits',
                 title: 'Complete 7 circuits — make dua and dhikr throughout',
-                note: 'Walk anti-clockwise around the Ka\'bah keeping it to your left. Do not turn your chest towards the Ka\'bah at any point — only when performing Istilam at the Black Stone. Make sure to go around the Hatim (the low wall on the northern side) as it is considered inside the Ka\'bah. You can recite any dua — the 3rd Kalimah, Durood, Istighfar, or read from Al-Hizb al-Azam. At the Yemeni Corner (Rukne Yamani), touch it with your right hand if possible. From the Yemeni Corner to the Black Stone, recite: "Rabbana atina fid-dunya hasanatan wa fil-akhirati hasanatan wa qina adhaban-nar."',
+                note: "Walk anti-clockwise around the Ka'bah keeping it to your left. Do not turn your chest towards the Ka'bah at any point — only when performing Istilam at the Black Stone. Make sure to go around the Hatim (the low wall on the northern side) as it is considered inside the Ka'bah. You can recite any dua — the 3rd Kalimah, Durood, Istighfar, or read from Al-Hizb al-Azam. At the Yemeni Corner (Rukne Yamani), touch it with your right hand if possible. From the Yemeni Corner to the Black Stone, recite: \"Rabbana atina fid-dunya hasanatan wa fil-akhirati hasanatan wa qina adhaban-nar.\"",
             },
             {
                 id: 'umrah.tawaf.final-istilam',
@@ -162,17 +162,17 @@ export const umrahPhases = [
             {
                 id: 'umrah.tawaf.two-rakaat',
                 title: 'Pray 2 rakaat Wajib Salat behind Maqam Ibrahim',
-                note: 'Recite Surah Kafirun in the 1st rakaat and Surah Ikhlas in the 2nd. Men: cover both shoulders for this Salat (no Idtiba\' during Salat). If Maqam Ibrahim is too crowded, pray anywhere else in the Masjid. If it is a Makruh time (after Fajr, at Zawal, or between Asr and Maghrib), wait until the Makruh time passes before praying.',
+                note: "Recite Surah Kafirun in the 1st rakaat and Surah Ikhlas in the 2nd. Men: cover both shoulders for this Salat (no Idtiba' during Salat). If Maqam Ibrahim is too crowded, pray anywhere else in the Masjid. If it is a Makruh time (after Fajr, at Zawal, or between Asr and Maghrib), wait until the Makruh time passes before praying.",
             },
             {
                 id: 'umrah.tawaf.dua-multazam',
                 title: 'After Salah: make dua at the Multazam if you can reach it',
-                note: 'The Multazam is the wall between the Ka\'bah door and the Black Stone. Press yourself against it and pour your heart in dua if you can reach it. If it is too busy, stand near and make dua from a distance.',
+                note: "The Multazam is the wall between the Ka'bah door and the Black Stone. Press yourself against it and pour your heart in dua if you can reach it. If it is too busy, stand near and make dua from a distance.",
             },
             {
                 id: 'umrah.tawaf.zamzam',
                 title: 'Drink Zamzam water — as much as possible',
-                note: 'Face the Qiblah and recite: "Allahumma inni as\'aluka \'ilman nafi\'an, wa rizqan wasi\'an, wa shifa\'an min kulli da\'in." (O Allah, I ask for beneficial knowledge, wide provision, and cure from every illness.) Drink in 3 breaths. You can also pray: "O Allah, by the blessing of this Zamzam, save me from the thirst of the Day of Judgement." Then return to the Black Stone and perform Istilam again before Sa\'i.',
+                note: "Face the Qiblah and recite: \"Allahumma inni as'aluka 'ilman nafi'an, wa rizqan wasi'an, wa shifa'an min kulli da'in.\" (O Allah, I ask for beneficial knowledge, wide provision, and cure from every illness.) Drink in 3 breaths. You can also pray: \"O Allah, by the blessing of this Zamzam, save me from the thirst of the Day of Judgement.\" Then return to the Black Stone and perform Istilam again before Sa'i.",
             },
         ],
     },
@@ -183,12 +183,12 @@ export const umrahPhases = [
         steps: [
             {
                 id: 'umrah.sai.approach-safa',
-                title: 'Follow signs for the Masa (Sa\'i area) and approach Safa with intention for Sa\'i',
+                title: "Follow signs for the Masa (Sa'i area) and approach Safa with intention for Sa'i",
                 note: 'When climbing Safa, recite: "Abdau bi ma bada Allahu bihi, innas-Safa wal-Marwata min sha\'a\'irillah." (I begin with what Allah began with — Indeed Safa and Marwah are among the signs of Allah.) This verse is recited only once, at the beginning.',
             },
             {
                 id: 'umrah.sai.safa-dua',
-                title: 'At Safa: climb as far as possible, face the Ka\'bah, and make dua',
+                title: "At Safa: climb as far as possible, face the Ka'bah, and make dua",
                 note: 'Recite 3 times: "Allahu Akbar, La ilaha illallah." Then recite the 4th Kalimah: "La ilaha illallahu wahdahu la sharika lah, lahul mulku wa lahul hamdu, yuhyi wa yumitu, wa huwa \'ala kulli shay\'in qadir." Then recite: "La ilaha illallahu wahdahu, anjaza wa\'dahu, wa nasara \'abdahu, wa hazamal ahzaba wahdah." Then read Durood Sharif and make lots of dua.',
             },
             {
@@ -198,12 +198,12 @@ export const umrahPhases = [
             },
             {
                 id: 'umrah.sai.marwah-dua',
-                title: 'At Marwah: face the Ka\'bah direction and repeat the same duas as at Safa',
+                title: "At Marwah: face the Ka'bah direction and repeat the same duas as at Safa",
                 note: 'Recite the same sequence as at Safa: 3× Allahu Akbar, La ilaha illallah → 4th Kalimah → dua → Durood Sharif. Then proceed back towards Safa. Continue until you have completed 7 trips, finishing at Marwah.',
             },
             {
                 id: 'umrah.sai.complete',
-                title: 'After the 7th trip ending at Marwah, Sa\'i is complete',
+                title: "After the 7th trip ending at Marwah, Sa'i is complete",
                 note: "It is Mustahab to pray 2 rakaat nafl anywhere in the Haram after Sa'i.",
             },
         ],
@@ -226,7 +226,7 @@ export const umrahPhases = [
             {
                 id: 'umrah.hair.complete',
                 title: 'Umrah is now complete — all Ihrām restrictions are lifted',
-                note: 'You may now wear normal clothing, use perfume, and resume all normal activities. Give thanks to Allah. Remember: for Tamattu\' pilgrims, you will re-enter Ihrām for Hajj on the 7th Dhul Hijjah.',
+                note: "You may now wear normal clothing, use perfume, and resume all normal activities. Give thanks to Allah. Remember: for Tamattu' pilgrims, you will re-enter Ihrām for Hajj on the 7th Dhul Hijjah.",
             },
         ],
     },
@@ -237,13 +237,13 @@ export const umrahPhases = [
         steps: [
             {
                 id: 'umrah.makkah-recommended.salat-jama',
-                title: 'Do not miss any Salat in congregation (Jama\'at) in the Haram Sharif',
+                title: "Do not miss any Salat in congregation (Jama'at) in the Haram Sharif",
                 note: 'Each prayer in Masjid al-Haram equals 100,000 prayers elsewhere. This is your priority above all other activities.',
             },
             {
                 id: 'umrah.makkah-recommended.quran',
                 title: 'Try to complete at least one full recitation of the Quran in the Haram',
-                note: 'Read Salah in the Hatim if possible (the low wall on the northern side of the Ka\'bah — make sure it is not a Makruh time). Every letter in the Haram carries exceptional reward.',
+                note: "Read Salah in the Hatim if possible (the low wall on the northern side of the Ka'bah — make sure it is not a Makruh time). Every letter in the Haram carries exceptional reward.",
             },
             {
                 id: 'umrah.makkah-recommended.tawaf',
@@ -268,7 +268,7 @@ export const umrahPhases = [
             {
                 id: 'umrah.makkah-recommended.learn-hajj',
                 title: 'Study and learn the rituals of Hajj before the Hajj days begin',
-                note: 'Use this app\'s Hajj Day-by-Day section. Read the rituals carefully and understand what is obligatory, recommended, and what to avoid.',
+                note: "Use this app's Hajj Day-by-Day section. Read the rituals carefully and understand what is obligatory, recommended, and what to avoid.",
             },
         ],
     },
@@ -277,7 +277,7 @@ export const umrahPhases = [
 export const umrahSection = {
     id: 'umrah',
     title: 'Umrah Guide',
-    intro: 'A step-by-step guide to performing Umrah for Hajj Tamattu\' pilgrims — from home departure through Makkah arrival, Tawaf, Sa\'i, and completing the Umrah. Mark each step as you complete it.',
+    intro: "A step-by-step guide to performing Umrah for Hajj Tamattu' pilgrims — from home departure through Makkah arrival, Tawaf, Sa'i, and completing the Umrah. Mark each step as you complete it.",
     steps: umrahPhases.flatMap((p) => p.steps),
     phases: umrahPhases,
 };

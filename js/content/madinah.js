@@ -17,19 +17,19 @@ export const madinahPhases = [
             {
                 id: 'madinah.preparation.salat-times',
                 title: 'Prioritise every Salat in congregation in Masjid al-Nabawi',
-                note: 'Do not miss any Salat in Jama\'at in Masjid al-Nabawi. If going for Ziyarah, ensure you will be back in time for Salat. This is the most important activity in Madinah.',
+                note: "Do not miss any Salat in Jama'at in Masjid al-Nabawi. If going for Ziyarah, ensure you will be back in time for Salat. This is the most important activity in Madinah.",
             },
             {
                 id: 'madinah.preparation.sisters-times',
                 title: 'Women: find out the permitted times to present Salam from your group leader',
-                note: 'There are specific times of day when sisters can go and present their Salam at the Prophet\'s ﷺ enclosure. Confirm these times with your group leader before going.',
+                note: "There are specific times of day when sisters can go and present their Salam at the Prophet's ﷺ enclosure. Confirm these times with your group leader before going.",
             },
         ],
     },
     {
         id: 'madinah.entering-masjid',
         title: 'Entering Masjid al-Nabawi',
-        intro: 'Enter the Masjid with your right foot. Take care not to commit any innovative actions (bid\'ah). Respect the sanctity of the Masjid and remain well-behaved at all times. Men may enter from any gate; if visiting specifically to present Salam, enter from Bab al-Salam (the gate on the right-hand side of the Masjid).',
+        intro: "Enter the Masjid with your right foot. Take care not to commit any innovative actions (bid'ah). Respect the sanctity of the Masjid and remain well-behaved at all times. Men may enter from any gate; if visiting specifically to present Salam, enter from Bab al-Salam (the gate on the right-hand side of the Masjid).",
         steps: [
             {
                 id: 'madinah.entering-masjid.enter',
@@ -38,13 +38,13 @@ export const madinahPhases = [
             },
             {
                 id: 'madinah.entering-masjid.rawdah',
-                title: 'Proceed towards the Rawdah — the area between the Prophet\'s ﷺ grave and his pulpit',
+                title: "Proceed towards the Rawdah — the area between the Prophet's ﷺ grave and his pulpit",
                 note: 'The Rawdah (garden) is on your left as you enter. The Prophet ﷺ said: "Between my house and my pulpit is one of the gardens of Paradise." Try to pray Salat in the Rawdah if possible — it carries exceptional reward. The area is marked by green carpet.',
             },
             {
                 id: 'madinah.entering-masjid.tahiyya',
                 title: 'Pray 2 rakaat Tahiyatul Masjid on entering',
-                note: 'Find a space in the Rawdah area if possible. The closer to the Prophet\'s ﷺ grave and pulpit, the more rewarding.',
+                note: "Find a space in the Rawdah area if possible. The closer to the Prophet's ﷺ grave and pulpit, the more rewarding.",
             },
         ],
     },
@@ -87,7 +87,7 @@ export const madinahPhases = [
         steps: [
             {
                 id: 'madinah.visits.baqi',
-                title: 'Men: Visit Jannat al-Baqi\' (the blessed graveyard adjacent to the Masjid)',
+                title: "Men: Visit Jannat al-Baqi' (the blessed graveyard adjacent to the Masjid)",
                 note: 'Many Companions, the wives of the Prophet ﷺ, and Sayyiduna Uthman ؓ are buried here. Check what time it opens. If possible, participate in a Janaza prayer there. Make dua for those buried here and for the whole Ummah. Women have restricted access — confirm with your group leader.',
             },
             {
@@ -107,7 +107,7 @@ export const madinahPhases = [
             },
             {
                 id: 'madinah.visits.other-ziyarat',
-                title: 'Other Ziyarat: Masjid Qiblatain, Jabal Uhud (and the Companions\' graves there)',
+                title: "Other Ziyarat: Masjid Qiblatain, Jabal Uhud (and the Companions' graves there)",
                 note: 'Check with your group leader before going to any Ziyarat sites as access may be restricted. Go at a time that is not too hot and where you can still return for Salat in the Masjid.',
             },
         ],
@@ -134,7 +134,7 @@ export const madinahPhases = [
 export const madinahSection = {
     id: 'madinah',
     title: 'Madinah Guide',
-    intro: 'A guide to visiting the blessed city of the Prophet ﷺ — presenting Salam, praying in Masjid al-Nabawi, visiting the Rawdah and Jannat al-Baqi\', and making the most of this precious time.',
+    intro: "A guide to visiting the blessed city of the Prophet ﷺ — presenting Salam, praying in Masjid al-Nabawi, visiting the Rawdah and Jannat al-Baqi', and making the most of this precious time.",
     steps: madinahPhases.flatMap((p) => p.steps),
     phases: madinahPhases,
 };

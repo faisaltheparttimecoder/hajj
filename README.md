@@ -1,105 +1,106 @@
-# Hajj Companion
+<div align="center">
 
-A free, offline-first personal checklist and guide for the Hajj pilgrimage.
+# 🕌 Hajj Companion
 
-**No tracking. No login. No cloud. Works offline.**
+### _A complete offline guide and personal checklist for the Hajj pilgrimage_
 
----
-
-## What this is
-
-A static web app that walks a pilgrim through the complete Hajj journey:
-
-1. **Nusuk registration** — step-by-step guide through the official Saudi booking platform
-2. **Pre-travel checklist** — documents, health, Ihrām, toiletries, tech, logistics, and spiritual preparation
-3. **Hajj day-by-day guide** — each day of Hajj with rites, duas (in Arabic, transliteration, and English), locations, and edge cases
-4. **Reference** — duas collection, glossary, emergency information
-
-Progress is saved in your browser's `localStorage`. Use the Export/Import feature in Settings to back up or move your data.
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Site-gold?style=for-the-badge)](https://faisaltheparttimecoder.github.io/hajj/)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
+[![Made with Love](https://img.shields.io/badge/Made_with-❤️-red?style=for-the-badge)](https://github.com/faisaltheparttimecoder)
 
 ---
 
-## Using it
+**Built with vanilla HTML, CSS, and JavaScript**  
+_No frameworks • No tracking • No login • Works offline_
 
-Open `index.html` in any modern browser. No build step, no server required.
+</div>
 
-**Add to home screen (recommended):**
-- **iPhone:** Tap Share → "Add to Home Screen"
-- **Android:** Tap the browser menu → "Add to Home Screen" or "Install app"
+## Features
 
-After the first load, the app works fully offline via a service worker. A pilgrim in Mina with no signal can still read the duas for Arafah.
+- **Nusuk registration guide** — step-by-step walkthrough of the official Saudi Hajj booking platform
+- **Umrah guide** — complete phase-by-phase Umrah companion from home to Makkah, including Tawaf and Sa'i
+- **Hajj day-by-day** — every day of Hajj (Day 0–5) with rites, locations, duas, and edge cases
+- **Madinah guide** — presenting Salam, the Rawdah, Jannat al-Baqi', and recommended visits
+- **Pre-travel checklist** — documents, health, Ihrām, toiletries, tech, logistics, and spiritual preparation
+- **Duas collection** — Arabic text, full transliteration, and English translation for every key moment
+- **Glossary** — 60+ terms covering Hajj fiqh, Arabic vocabulary, and ritual terminology
+- **Dark & light themes** — automatic system preference with manual override
+- **Offline-capable** — works fully without internet after first load via service worker
+- **PWA-ready** — installable on iPhone and Android as a home screen app
+- **Progress tracking** — every step checkable, saved in `localStorage` with export/import support
+- **Accessible** — semantic HTML, ARIA labels, keyboard navigation
 
----
+## Deploy
 
-## Religious disclaimer
+This site is designed for GitHub Pages:
+
+1. Push your code to GitHub
+2. Go to **Settings** → **Pages** → set source to **GitHub Actions**
+3. Your site will be live at `https://<username>.github.io/<repo-name>/`
+
+The included workflow at `.github/workflows/deploy.yml` handles deployment automatically on every push to `main`.
+
+## Local Development
+
+```bash
+python3 -m http.server 8787
+```
+
+Then open `http://localhost:8787` — no build step, no dependencies.
+
+## Content Structure
+
+All content is plain JavaScript modules — no framework knowledge needed:
+
+| File                      | Contents                                               |
+| ------------------------- | ------------------------------------------------------ |
+| `js/content/duas.js`      | Dua texts, transliterations, translations, and sources |
+| `js/content/checklist.js` | Pre-travel checklist categories and items              |
+| `js/content/hajj-days.js` | Day-by-day Hajj guide (Day 0–5)                        |
+| `js/content/umrah.js`     | Phase-by-phase Umrah guide                             |
+| `js/content/madinah.js`   | Madinah visit guide                                    |
+| `js/content/glossary.js`  | Glossary terms and definitions                         |
+| `js/content/nusuk.js`     | Nusuk registration and Rawdah permit steps             |
+
+## Religious Disclaimer
 
 This app is a **memory aid and personal checklist — not a source of religious rulings (fatawa).**
 
-- Duas are sourced from Sahih al-Bukhari, Sahih Muslim, Sunan Abi Dawud, Jami' al-Tirmidhi, and other established collections.
-- Translations are approximations — the Arabic is the primary text.
-- Schools of Islamic jurisprudence differ on many details of Hajj rites.
-- Saudi regulations and Nusuk requirements change each season.
-- This app cannot account for your personal circumstances.
+- Duas are sourced from Sahih al-Bukhari, Sahih Muslim, Sunan Abi Dawud, Jami' al-Tirmidhi, and other established collections
+- Translations are approximations — the Arabic is always the primary text
+- Schools of Islamic jurisprudence differ on many details of Hajj rites
+- Saudi regulations and Nusuk requirements change each season
 
-**For all religious matters, follow the guidance of your group leader and a qualified scholar.** For visa and registration matters, verify with your country's Hajj authority and [nusuk.sa](https://www.nusuk.sa) directly.
-
----
+**For all religious matters, follow the guidance of your group leader and a qualified scholar.**
 
 ## Privacy
 
-Zero outbound network requests after the first page load. No analytics, no trackers, no third-party scripts of any kind. Your checklist data is stored only in your browser's `localStorage` on your own device.
+Zero outbound network requests after the first page load. No analytics, no trackers, no third-party scripts. Your progress data is stored only in your browser's `localStorage` on your own device.
 
----
-
-## Contributing corrections
+## Contributing
 
 Religious accuracy is the highest priority. If you find an error in any dua, translation, or guidance:
 
-1. Open an issue describing the error and providing the correct text with its source
+1. Open an issue with the correct text and its scholarly source
 2. Or submit a pull request with the correction
 
-Please include the hadith reference or scholarly source for any correction. Changes to religious content require clear sourcing.
-
-**Content files are plain JavaScript modules** — no framework knowledge needed:
-- `js/content/duas.js` — dua texts and sources
-- `js/content/checklist.js` — pre-travel checklist items
-- `js/content/hajj-days.js` — day-by-day guide content
-- `js/content/glossary.js` — terminology definitions
-- `js/content/nusuk.js` — Nusuk registration steps
-
----
-
-## Self-hosting
-
-It's static HTML, CSS, and JavaScript — host it anywhere:
-
-```
-# GitHub Pages: push to main, enable Pages from root
-# Netlify / Vercel: connect repo, no build command, publish directory = .
-# Apache / nginx: serve the directory as static files
-# Locally: open index.html directly in a browser
-```
-
-All asset paths are relative so the app works whether served from a domain root, a subdirectory, or opened directly from disk.
-
----
-
-## PWA icons
-
-The repository includes an SVG icon (`icons/icon.svg`). For iOS PWA support, generate PNG icons from it:
-
-```bash
-# Using ImageMagick (example):
-convert icons/icon.svg -resize 192x192 icons/icon-192.png
-convert icons/icon.svg -resize 512x512 icons/icon-512.png
-```
-
-Or use any SVG-to-PNG converter. Place the resulting files at `icons/icon-192.png` and `icons/icon-512.png`.
-
----
+Please include the hadith reference or scholarly source for any changes to religious content.
 
 ## License
 
-MIT — see [LICENSE](./LICENSE).
+- **Code**: [MIT License](LICENSE) — free to use, modify, and distribute
+- **Content**: Public devotional material — share freely for the sake of Allah
 
-May Allah accept your Hajj.
+---
+
+<div align="center">
+
+### 🤲 _May Allah accept your Hajj, forgive your sins, and return you safely to your family_
+
+_Ameen_
+
+---
+
+Made with ❤️ for the Ummah | [Report an Issue](https://github.com/faisaltheparttimecoder/hajj/issues)
+
+</div>
