@@ -159,12 +159,21 @@ function renderChecklistItem(item, showNoteField) {
 function renderStepItem(step) {
     const checked = isCompleted(step.id);
     const noteText = step.note ? `<p class="item-guidance">${escHtml(step.note)}</p>` : '';
+    const linksHtml = step.links
+        ? step.links
+              .map(
+                  (l) =>
+                      `<a href="${escHtml(l.url)}" target="_blank" rel="noopener noreferrer" class="external-link">${escHtml(l.label)} ↗</a>`,
+              )
+              .join('')
+        : '';
     return `<li class="checklist-item${checked ? ' is-checked' : ''}" data-id="${escHtml(step.id)}">
     <label class="checklist-label">
       <input type="checkbox" class="checklist-cb" data-id="${escHtml(step.id)}" ${checked ? 'checked' : ''} />
       <span class="checklist-text">${escHtml(step.label)}</span>
     </label>
     ${noteText}
+    ${linksHtml}
   </li>`;
 }
 

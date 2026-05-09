@@ -196,6 +196,12 @@ After sunset, you travel to Muzdalifah — an open plain — where you sleep und
                 id: 'day-2.wuquf',
                 label: 'Stand in dua and dhikr from Dhuhr until sunset — the Wuquf (standing)',
                 note: 'You do not have to physically stand — sitting, lying down, being in your tent are all fine. "Standing" means being present at Arafah during the time. Spend this time in sincere supplication. Weep if you can. Make dua for everything you have ever needed.',
+                links: [
+                    {
+                        label: '1000 Duas for Arafah',
+                        url: 'https://faisaltheparttimecoder.github.io/1000-duas-for-arafah/?lang=ar',
+                    },
+                ],
             },
             {
                 id: 'day-2.sunset-depart',
