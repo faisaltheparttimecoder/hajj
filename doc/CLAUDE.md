@@ -7,8 +7,8 @@ A static, offline-first Hajj preparation and journey companion. Built for GitHub
 ## 1. Project Overview
 
 **Name:** Hajj Companion (working title — feel free to rename)
-**Purpose:** A personal checklist and guide that walks a pilgrim through the full Hajj journey — from Nusuk registration, through pre-travel preparation, through each day of Hajj rites with associated duas.
-**Audience:** Muslim pilgrims preparing for and performing Hajj. Many will be first-time pilgrims; many will be older; many will read on a phone in poor connectivity in Makkah/Mina.
+**Purpose:** A personal checklist and guide that walks a pilgrim through the full pilgrimage journey — from Nusuk registration, through Umrah, through each day of Hajj rites with associated duas, and through the visit to Madinah.
+**Audience:** Muslim pilgrims preparing for and performing Hajj (including the Umrah component of Hajj Tamattu') and visiting Madinah. Many will be first-time pilgrims; many will be older; many will read on a phone in poor connectivity in Makkah/Mina.
 **Hosting:** GitHub Pages (static only).
 **Promise to the user:** No frameworks. No tracking. No distractions. Works offline.
 
@@ -44,7 +44,7 @@ A static, offline-first Hajj preparation and journey companion. Built for GitHub
 
 ## 4. Information Architecture
 
-The app has three top-level sections, in this order:
+The app has six top-level sections, in this order:
 
 ### Section A: Nusuk Registration
 
@@ -72,26 +72,78 @@ Grouped sub-checklists, each collapsible:
 - **Logistics:** Group/operator contacts written down on paper, hotel addresses in Arabic on paper, emergency embassy number, family WhatsApp group set up, will and finances settled at home, debts paid, forgiveness sought from family.
 - **Spiritual preparation:** Intention (niyyah) clarified, key duas memorized or bookmarked, basic Hajj fiqh reviewed, repentance (tawbah).
 
-### Section C: Day-by-Day Hajj Guide
+### Section C: Umrah Guide (`js/content/umrah.js`)
 
-The five days of Hajj plus the days immediately surrounding. Each day is its own page with: overview, what happens, where you'll be, what to do, duas to recite, common mistakes/edge cases, checklist.
+A phase-by-phase guide for Hajj Tamattu' pilgrims performing Umrah on arrival in Makkah. Each phase is a group of checkable steps.
 
-- **Day 1 — 8th Dhul Hijjah (Yawm at-Tarwiyah):** Enter ihram from your accommodation, travel to Mina, pray Dhuhr/Asr/Maghrib/Isha/Fajr (next day) shortened in Mina.
-- **Day 2 — 9th Dhul Hijjah (Yawm Arafah):** The day of Arafah — the heart of Hajj. Travel to Arafat after Fajr, stand in dua from Dhuhr until Maghrib, then proceed to Muzdalifah for Maghrib + Isha combined and overnight, collect pebbles.
-- **Day 3 — 10th Dhul Hijjah (Yawm an-Nahr / Eid al-Adha):** Return to Mina, stone Jamarat al-Aqaba (7 pebbles), sacrifice (hady), shave/shorten hair, remove ihram (partial tahallul), then Tawaf al-Ifadah and Sa'i in Makkah, return to Mina.
-- **Day 4 — 11th Dhul Hijjah:** Stay in Mina, stone all three Jamarat after Dhuhr (small, middle, large — 7 pebbles each).
-- **Day 5 — 12th Dhul Hijjah:** Stay in Mina, stone all three Jamarat again. Pilgrims may leave Mina before sunset (ta'ajjul) or stay one more day.
-- **Day 6 — 13th Dhul Hijjah (optional):** Stay one more day in Mina, stone all three Jamarat one more time.
-- **Tawaf al-Wada (Farewell Tawaf):** Final Tawaf before leaving Makkah. Required for non-Makkans.
+- **Phase 1 — Home Departure:** Final packing checks, confirming wudu at airport, entering Ihram before the Miqat on the plane.
+- **Phase 2 — At the Miqat:** Making niyyah, reciting Talbiyah, Ihram rules reminder.
+- **Phase 3 — Jeddah Arrival:** Immigration, passport handling by Hajj operator, transfer to Makkah.
+- **Phase 4 — Arriving at Makkah:** Hotel check-in, wudu, entering Masjid al-Haram through Bab al-Umrah, first sight of the Ka'bah.
+- **Phase 5 — Tawaf:** Idtiba', Istilam at the Black Stone, 7 anti-clockwise circuits with dua and dhikr, 2 rakaat at Maqam Ibrahim, Multazam dua, Zamzam.
+- **Phase 6 — Sa'i:** 7 trips between Safa and Marwah, duas at each hill, completing at Marwah.
+- **Phase 7 — Hair cutting (Halq/Qasr):** Men shave or shorten; women cut a small amount. Tahallul — Ihram restrictions lifted.
+- **Phase 8 — Recommended acts in Makkah:** Every Salat in congregation, Quran recitation, nafl Tawaf, visiting Zamzam, preparing for Hajj.
 
-For each day include the relevant duas in Arabic, transliteration, and English translation. Mark the Talbiyah prominently — it's recited from entering ihram until stoning Jamarat al-Aqaba on Day 3.
+Content exported as `umrahSection` with `id`, `title`, `intro`, `phases[]`, and a flat `steps[]` array (for progress tracking).
 
-### Optional Section D: Reference
+Each step has `id`, `title`, `note`, and optionally a `links[]` array for external links (see **Step Link Support** below).
 
-- Glossary (Ihram, Tawaf, Sa'i, Talbiyah, Tahallul, Hady, Jamarat, etc.)
-- Common duas (Talbiyah in full, dua at Multazam, dua between Safa-Marwa, dua at Arafah, etc.)
-- Emergency info (lost in Mina, lost passport, medical emergencies, embassy numbers — leave the actual numbers as placeholders the user fills in for their country)
-- About / Credits / Disclaimer
+### Section D: Day-by-Day Hajj Guide (`js/content/hajj-days.js`)
+
+Six days of Hajj plus preparation day. Each day has: `overview`, `steps[]`, `duas[]` (keys into `duas.js`), and `edgeCases[]`. Structure:
+
+- **Day 0 — 7th Dhul Hijjah (Preparation Day):** Clip nails and remove hair, pack the Mina bag light, confirm Qurbani arrangement, perform ghusl, put on Ihram garments, nafl Tawaf, make niyyah for Hajj, begin Talbiyah. This day is the final window before Ihram restrictions apply.
+- **Day 1 — 8th Dhul Hijjah (Yawm at-Tarwiyah):** Enter Ihram from accommodation, travel to Mina, pray Dhuhr/Asr/Maghrib/Isha/Fajr (next day) shortened in Mina.
+- **Day 2 — 9th Dhul Hijjah (Yawm Arafah):** The heart of Hajj. Travel to Arafah after Fajr, stand in dua from Dhuhr until sunset, depart to Muzdalifah, Maghrib + Isha combined, sleep under the sky, collect pebbles, Fajr early, depart before sunrise. The wuquf step links to the external **1000 Duas for Arafah** app.
+- **Day 3 — 10th Dhul Hijjah (Yawm an-Nahr / Eid al-Adha):** Stone Jamarat al-Aqaba, confirm Hady sacrifice, shave/shorten hair (partial tahallul), Tawaf al-Ifadah and Sa'i in Makkah, return to Mina.
+- **Day 4 — 11th Dhul Hijjah:** Stone all three Jamarat after Dhuhr (7 pebbles each).
+- **Day 5 — 12th Dhul Hijjah:** Stone all three Jamarat. Pilgrims may depart Mina before sunset (ta'ajjul) or stay for Day 6.
+- **Day 6 — 13th Dhul Hijjah (optional):** Stone all three Jamarat one final time.
+- **Tawaf al-Wada':** Farewell Tawaf before leaving Makkah. Required for non-Makkans.
+
+For each day, duas are referenced by key (e.g. `'talbiyah'`, `'arafah_dua'`) — the rendering layer looks them up in `duas.js`. Mark the Talbiyah prominently — recited from entering Ihram until stoning Jamarat al-Aqaba on Day 3.
+
+### Section E: Madinah Guide (`js/content/madinahSection`)
+
+A phase-by-phase guide to visiting the blessed city of the Prophet ﷺ. Structured identically to the Umrah guide (phases → steps).
+
+- **Phase 1 — Preparation:** Prioritise every Salat in congregation in Masjid al-Nabawi; sisters' specific access times for the Prophet's ﷺ enclosure.
+- **Phase 2 — Entering Masjid al-Nabawi:** Right foot entry, Tahiyatul Masjid, proceeding to the Rawdah (green carpet area).
+- **Phase 3 — Presenting Salam:** Walking along the Prophet's ﷺ grave, Sayyiduna Abu Bakr ؓ, and Sayyiduna Umar ؓ. Etiquette and what to say.
+- **Phase 4 — The Rawdah:** Seeking a prayer space in the garden between the grave and the pulpit; supplication; 40 prayers (Arba'een).
+- **Phase 5 — Recommended Visits:** Jannat al-Baqi' (men, with conditions for women), Masjid Quba (2 rakaat = Umrah reward), Masjid al-Qiblatayn, Jabal Uhud and the Companions' graves.
+- **Phase 6 — Departure:** Presenting final Salam, leaving Madinah with composure.
+
+Content exported as `madinahSection` with `id`, `title`, `intro`, `phases[]`, and flat `steps[]`.
+
+### Section F: Reference
+
+- **Glossary (`js/content/glossary.js`)** — 62 terms covering Hajj fiqh, Arabic ritual vocabulary, Madhhabs, Ihram rules, prayer terminology, penalty types (Dam, Badanah, Sadaqah), Tawaf variants, Umrah types, and key places. Sorted alphabetically. Each entry has `id`, `term`, `arabic`, and `definition`.
+- **Duas (`js/content/duas.js`)** — keyed collection with Arabic, transliteration, English, and hadith source for each dua. Includes: Talbiyah, entering Ihram, entering the Haram, seeing the Ka'bah, Zamzam, Safa dua, Arafah dua, Tawaf duas, Salam on the Prophet ﷺ, and more.
+- **Emergency info** — placeholders for lost passport, medical emergencies, and embassy numbers (user fills in their country's details).
+
+---
+
+### Step Link Support
+
+Steps across all content modules support an optional `links[]` array for contextual external resources:
+
+```js
+{
+    id: 'day-2.wuquf',
+    label: 'Stand in dua and dhikr from Dhuhr until sunset',
+    note: '...',
+    links: [
+        {
+            label: '1000 Duas for Arafah',
+            url: 'https://faisaltheparttimecoder.github.io/1000-duas-for-arafah/?lang=ar',
+        },
+    ],
+}
+```
+
+Rendered as pill-shaped external link buttons below the step note. Open in a new tab with `rel="noopener noreferrer"`. Use sparingly — only for genuinely useful companion resources that are unavailable offline.
 
 ---
 
@@ -225,37 +277,77 @@ This is critical. Get this wrong and the app does harm.
 ├── styles.css
 ├── manifest.json
 ├── sw.js
+├── .nojekyll              ← prevents Jekyll processing on GitHub Pages
 ├── /js
-│   ├── app.js
-│   ├── router.js
-│   ├── state.js
-│   ├── render.js
+│   ├── app.js             ← entry point; sets up routes and registers SW
+│   ├── router.js          ← hash-based router; matchRoute handles all sections
+│   ├── state.js           ← localStorage read/write, schema versioning
+│   ├── render.js          ← all view rendering; imports all content modules
 │   └── content/
-│       ├── nusuk.js
-│       ├── checklist.js
-│       ├── hajj-days.js
-│       ├── duas.js
-│       └── glossary.js
+│       ├── nusuk.js       ← Nusuk registration steps
+│       ├── checklist.js   ← pre-travel checklist (groups + items)
+│       ├── hajj-days.js   ← day-by-day Hajj guide (Day 0–6 + Tawaf al-Wada')
+│       ├── umrah.js       ← Umrah guide (8 phases, checkable steps)
+│       ├── madinah.js     ← Madinah visit guide (6 phases, checkable steps)
+│       ├── duas.js        ← duas keyed collection (Arabic, transliteration, English)
+│       └── glossary.js    ← 62 Islamic/Hajj terms, alphabetically sorted
 ├── /icons
+│   ├── icon.svg
 │   ├── icon-192.png
-│   ├── icon-512.png
-│   └── (inline SVGs in code, these are just for PWA install)
+│   └── icon-512.png
+├── /.github
+│   └── workflows/
+│       └── deploy.yml     ← GitHub Actions workflow; deploys to GitHub Pages on push to main
+├── /doc
+│   └── CLAUDE.md          ← this file
 ├── README.md
-├── LICENSE          (MIT or similar — be explicit)
-└── CLAUDE.md
+└── LICENSE
 ```
 
 Content lives in plain JS modules exporting structured data. This makes it trivial for contributors to submit corrections via PR without touching rendering code.
+
+### Key rendering functions in `render.js`
+
+| Function                                               | Renders                                                   |
+| ------------------------------------------------------ | --------------------------------------------------------- |
+| `renderHome()`                                         | Welcome screen with section cards for all 6 sections      |
+| `renderNusukOverview()` / `renderNusukStep()`          | Nusuk registration                                        |
+| `renderChecklistOverview()` / `renderChecklistGroup()` | Pre-travel checklist                                      |
+| `renderUmrah()`                                        | Umrah guide (phase cards + checkable steps)               |
+| `renderHajjOverview()` / `renderHajjDay()`             | Hajj day cards + individual day view                      |
+| `renderMadinah()`                                      | Madinah guide (phase cards + checkable steps)             |
+| `renderDuas()` / `renderGlossary()`                    | Reference section                                         |
+| `renderStepItem()`                                     | Individual checkable step — supports `note` and `links[]` |
 
 ---
 
 ## 11. GitHub Pages Deployment
 
-- Ship from the `main` branch root, or from `/docs`. No build step.
-- Add a `.nojekyll` empty file at the root so Jekyll doesn't try to process anything.
-- The site will be served from `https://<user>.github.io/<repo>/`. **All asset paths must be relative** (`./styles.css`, not `/styles.css`) so the app works whether served from a project page, a custom domain, or opened from disk.
-- Service worker scope — register it with a relative path so it works under a subpath.
-- Add a CNAME file if a custom domain is used.
+Deployment is fully automated via GitHub Actions.
+
+**Workflow:** `.github/workflows/deploy.yml`
+
+- Triggers on every push to `main` (and supports manual `workflow_dispatch`).
+- Uses `actions/upload-pages-artifact@v3` to upload the entire repo root as a Pages artifact.
+- Uses `actions/deploy-pages@v4` to deploy. No build step — files are served as-is.
+
+**To enable for a new repo:**
+
+1. Push to GitHub.
+2. Go to **Settings → Pages → Source** and select **GitHub Actions**.
+3. The next push to `main` will deploy automatically.
+
+**Asset path rules (critical):**
+
+- All paths use `./` prefix (`./styles.css`, `./js/app.js`, etc.) — never absolute paths starting with `/`.
+- This makes the app work whether served from a domain root, a project subpath (`/hajj/`), or opened directly from disk.
+- The service worker cache list also uses `./` relative paths.
+
+**Other notes:**
+
+- `.nojekyll` file at the repo root prevents Jekyll from processing anything.
+- `manifest.json` uses `"start_url": "./"` for PWA correctness under a subpath.
+- Add a `CNAME` file if a custom domain is used.
 
 ---
 
@@ -273,9 +365,12 @@ A pilgrim opens the site on their phone six weeks before Hajj. They:
 2. Walk through Nusuk registration, ticking items as they complete them.
 3. Over the following weeks, work through pre-travel checklists.
 4. Add the site to their home screen.
-5. On the plane, with no signal, they open the app and review Day 1 of Hajj.
-6. In Mina at 2am with one bar of signal, they open the app and read the Talbiyah and the duas for Arafah.
-7. After Hajj, they tap "Reset everything" or export their journey for memory.
+5. On the plane, with no signal, they open the Umrah guide and tick off the pre-departure steps.
+6. At the Miqat on the plane, they open the Umrah guide and follow the Ihram steps.
+7. In Makkah, they follow the Tawaf and Sa'i steps one by one.
+8. In Mina at 2am with one bar of signal, they open the app, read the Talbiyah, and tap the "1000 Duas for Arafah" link on the Wuquf step.
+9. In Madinah, they follow the guide to present Salam and visit the Rawdah.
+10. After Hajj, they tap "Reset everything" or export their journey for memory.
 
 If every one of those steps works smoothly, on a 4-year-old phone, in airplane mode, with no errors and no surprises — the app is done.
 
